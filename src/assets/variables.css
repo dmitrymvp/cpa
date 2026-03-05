@@ -1,0 +1,9 @@
+:root {
+  --color-main: #9e13e0;
+  --color-yell: #fee97d;
+  --color-text: #ffffff;
+  --color-dark: #14091a;
+
+  --font-main: 'HalvarBreit', sans-serif;
+  --font-second: 'Stolzl', sans-serif;
+}
