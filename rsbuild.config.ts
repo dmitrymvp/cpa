@@ -7,16 +7,4 @@ export default defineConfig({
   html: {
     title: 'cpa',
   },
-  resolve: {
-    alias: {
-      '@assets': './src/assets',
-      '@app': './src/app',
-      '@pages': './src/pages',
-      '@features': './src/features',
-      '@widgets': './src/widgets',
-      '@entities': './src/entities',
-      '@shared': './src/shared',
-      '@hooks': './src/shared/hooks',
-    },
-  },
 });
