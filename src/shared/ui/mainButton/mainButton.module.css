@@ -1,30 +1,58 @@
 .mainButton {
-  min-width: 280px;
-  height: 82px;
-  padding: 0 23px 0 13px;
-  border: none;
-  background-image: url('../../../assets/img/mainButtonBG.png');
-  background-color: rgba(255, 255, 255, 0);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
+  position: relative;
+  min-width: 272px;
+  height: 75px;
+  padding: 0 14px;
+  background-color: var(--color-yell);
+  border: 3px solid var(--color-dark);
+  border-radius: 2px;
+  cursor: pointer;
   text-align: center;
   white-space: nowrap;
   text-transform: uppercase;
-  letter-spacing: 4.8px;
+  letter-spacing: 4.5px;
   font-size: 23px;
   font-weight: 700;
-  line-height: 4;
   color: var(--color-dark);
-  cursor: pointer;
+}
+
+.mainButton::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -11px;
+  left: 1px;
+  transform: skewX(-45deg);
+  min-width: calc(100% + 6px);
+  height: 10px;
+  border: inherit;
+  border-bottom: none;
+  border-radius: 2px;
+  background-color: inherit;
+}
+
+.mainButton::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -7px;
+  right: -11px;
+  transform: skewY(-45deg);
+  width: 10px;
+  height: inherit;
+  border: inherit;
+  border-left: none;
+  border-radius: 2px;
+  background-color: inherit;
 }
 
 .mainButton:hover {
-  background-image: url('../../../assets/img/mainButtonBGHover.png');
+  background-color: var(--color-dark);
   color: var(--color-yell);
+  border-color: currentColor;
 }
 
 .mainButton:active {
-  background-image: url('../../../assets/img/mainButtonBG.png');
+  background-color: var(--color-yell);
   color: var(--color-dark);
 }
