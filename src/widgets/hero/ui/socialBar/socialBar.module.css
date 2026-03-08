@@ -1,0 +1,15 @@
+.ul {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+  height: 40px;
+  padding: 5px;
+}
+
+.link {
+  color: var(--color-text);
+}
+
+.link:hover {
+  color: var(--color-yell);
+}
