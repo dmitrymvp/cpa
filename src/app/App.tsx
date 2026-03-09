@@ -1,4 +1,4 @@
-import '../assets/global.css';
+import '@assets/global.css';
 
 const App = () => {
   return <h1>Hello World</h1>;
