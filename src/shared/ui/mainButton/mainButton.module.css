@@ -1,0 +1,58 @@
+.mainButton {
+  position: relative;
+  min-width: 272px;
+  height: 75px;
+  padding: 0 14px;
+  background-color: var(--color-yell);
+  border: 3px solid var(--color-dark);
+  border-radius: 2px;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 4.5px;
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.mainButton::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -11px;
+  left: 1px;
+  transform: skewX(-45deg);
+  min-width: calc(100% + 6px);
+  height: 10px;
+  border: inherit;
+  border-bottom: none;
+  border-radius: 2px;
+  background-color: inherit;
+}
+
+.mainButton::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -7px;
+  right: -11px;
+  transform: skewY(-45deg);
+  width: 10px;
+  height: inherit;
+  border: inherit;
+  border-left: none;
+  border-radius: 2px;
+  background-color: inherit;
+}
+
+.mainButton:hover {
+  background-color: var(--color-dark);
+  color: var(--color-yell);
+  border-color: currentColor;
+}
+
+.mainButton:active {
+  background-color: var(--color-yell);
+  color: var(--color-dark);
+}
