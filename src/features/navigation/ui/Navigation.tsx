@@ -1,9 +1,6 @@
+import { navigationList } from '@shared/model/i18n';
 import styles from './navigation.module.css';
-import {
-  navigationMenuItemsDesktop,
-  navigationMenuItemsMobile,
-  type Lang,
-} from '@features/navigation/model/navigationData';
+import { type Lang } from '@shared/types/language';
 
 interface NavigationProps {
   version: 'desktop' | 'mobile';
@@ -11,23 +8,23 @@ interface NavigationProps {
 }
 
 const Navigation = ({ version, lang }: NavigationProps) => {
-  const menuData =
+  const data = navigationList[lang];
+
+  const renderNavigationList =
     version === 'desktop'
-      ? navigationMenuItemsDesktop
-      : navigationMenuItemsMobile;
+      ? Object.values(data).filter((id) => id !== 'MAIN')
+      : Object.values(data);
 
   return (
     <nav className={styles.nav}>
       <ul className={styles[`list-${version}`]}>
-        {menuData.map((item) => {
-          return (
-            <li className={styles.item} key={item.id}>
-              <a href="#" className={styles.link}>
-                {item[lang]}
-              </a>
-            </li>
-          );
-        })}
+        {renderNavigationList.map((item) => (
+          <li className={styles.listItem} key={item}>
+            <a href="#" className={styles.link}>
+              {item}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
