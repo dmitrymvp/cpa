@@ -1,26 +1,16 @@
-import InstagramIcon from '../../../../assets/icons/instagramIcon.svg?react';
-import LinkedinIcon from '../../../../assets/icons/linkedinIcon.svg?react';
-import TelegramIcon from '../../../../assets/icons/telegramIcon.svg?react';
-import style from './socialBar.module.css';
+import styles from './socialBar.module.css';
+import { socialLinks } from '@shared/model/socialLinks';
 
 function SocialBar() {
-  const data = [
-    [InstagramIcon, 'instagram'],
-    [TelegramIcon, 'telegram'],
-    [LinkedinIcon, 'linkedin'],
-  ] as const;
-
   return (
-    <ul className={style.ul}>
-      {data.map(([Icon, descr]) => {
-        return (
-          <li key={descr}>
-            <a href="#" className={style.link} aria-label={`${descr} icon`}>
-              <Icon className={style.icon} />
-            </a>
-          </li>
-        );
-      })}
+    <ul className={styles.ul}>
+      {Object.entries(socialLinks).map(([_, { Icon, descr, link }]) => (
+        <li key={descr}>
+          <a href={link} className={styles.link} aria-label={`${descr} icon`}>
+            <Icon className={styles.icon} />
+          </a>
+        </li>
+      ))}
     </ul>
   );
 }
