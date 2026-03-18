@@ -1,7 +1,8 @@
 import '@assets/global.css';
+import Hero from '@widgets/hero/Hero';
 
 const App = () => {
-  return <h1>Hello World</h1>;
+  return <Hero />;
 };
 
 export default App;
