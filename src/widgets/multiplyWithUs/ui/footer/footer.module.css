@@ -1,0 +1,57 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  font-weight: 700;
+  font-size: 20px;
+  height: 50px;
+  padding: 0 25px;
+}
+
+.ul {
+  width: 456px;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+
+  text-transform: uppercase;
+}
+
+.link,
+.scrollButton {
+  color: var(--color-yell);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  cursor: pointer;
+}
+
+.link:hover,
+.scrollButton:hover {
+  color: var(--color-text);
+}
+
+.span {
+  position: relative;
+}
+
+.span::after {
+  content: '';
+  width: 2px;
+  height: 28px;
+  position: absolute;
+  right: -17px;
+  top: -4px;
+  background-color: currentColor;
+}
+.span::before {
+  content: '';
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  transform: rotate(315deg);
+  top: -4px;
+  right: -21px;
+}

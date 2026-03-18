@@ -14,3 +14,8 @@ export const navigationList: Record<Lang, Record<string, string>> = {
     joinUs: 'С НАМИ',
   },
 };
+
+export const scrollToTopText = {
+  eng: 'SCROLL TO TOP',
+  ru: 'НАВЕРХ',
+};
