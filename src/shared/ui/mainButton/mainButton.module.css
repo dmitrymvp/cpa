@@ -14,6 +14,9 @@
   font-size: 23px;
   font-weight: 700;
   color: var(--color-dark);
+  z-index: 10;
+  align-self: flex-start;
+  flex: 0 0 auto;
 }
 
 .mainButton::before {
@@ -23,10 +26,10 @@
   top: -11px;
   left: 1px;
   transform: skewX(-45deg);
-  min-width: calc(100% + 6px);
+  min-width: calc(100% + 5px);
   height: 10px;
   border: inherit;
-  border-bottom: none;
+  /* border-bottom: none; */
   border-radius: 2px;
   background-color: inherit;
 }
@@ -39,9 +42,9 @@
   right: -11px;
   transform: skewY(-45deg);
   width: 10px;
-  height: inherit;
+  height: calc(100% + 6px);
   border: inherit;
-  border-left: none;
+  /* border-left: none; */
   border-radius: 2px;
   background-color: inherit;
 }

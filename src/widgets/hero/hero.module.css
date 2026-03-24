@@ -1,0 +1,59 @@
+.hero {
+  height: 100vh;
+
+  background: linear-gradient(120deg, #dc8400, #560080, #220032) 0 0 / cover no-repeat;
+}
+
+.flexContainer {
+  display: flex;
+  height: 100vh;
+
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 20px 50px 50px;
+  margin: 0 auto;
+  background: url('~@assets/img/hero-snake.png') 490px 110px / 950px 790px no-repeat;
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 330px;
+  width: 756px;
+  margin-bottom: auto;
+  margin-top: 145px;
+}
+
+.title {
+  margin: 0;
+  color: var(--color-text);
+
+  font-family: var(--font-main);
+  font-style: Bold;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1.74px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.title span {
+  color: var(--color-yell);
+}
+
+.subtitle {
+  margin-top: 10px;
+  margin-bottom: auto;
+  width: 550px;
+
+  color: var(--color-text);
+
+  font-family: var(--font-second);
+  font-style: Regular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}
