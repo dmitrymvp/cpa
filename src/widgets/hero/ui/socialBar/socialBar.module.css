@@ -1,0 +1,16 @@
+.ul {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+  height: 40px;
+  padding: 5px;
+  list-style-type: none;
+}
+
+.link {
+  color: var(--color-text);
+}
+
+.link:hover {
+  color: var(--color-yell);
+}
