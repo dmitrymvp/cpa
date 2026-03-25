@@ -12,7 +12,7 @@
   justify-content: space-between;
   padding: 30px 20px 50px 50px;
   margin: 0 auto;
-  background: url('~@assets/img/hero-snake.png') 490px 110px / 950px 790px no-repeat;
+  background: url('~@assets/img/hero-snake.png') 492px 111px / 949px 810px no-repeat;
 }
 .section {
   display: flex;
