@@ -34,3 +34,5 @@ export const heroSectionText = {
     button: 'ПОЛУЧИТЬ ПРОФИТ',
   },
 };
+
+export const multiTasksSectionTitle = 'MULTI-TASKS';
