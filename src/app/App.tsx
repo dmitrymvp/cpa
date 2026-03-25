@@ -1,8 +1,8 @@
 import '@assets/global.css';
-import Hero from '@widgets/hero/Hero';
+import MultiTasks from '@widgets/multiTasks/MultiTasks';
 
 const App = () => {
-  return <Hero lang="eng" />;
+  return <MultiTasks lang="en" />;
 };
 
 export default App;
