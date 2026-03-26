@@ -1,4 +1,4 @@
-import { navigationList } from '@shared/model/i18n';
+import { navigationList } from '@shared/model/constants';
 import styles from './navigation.module.css';
 import { type Lang } from '@shared/types/language';
 
@@ -11,9 +11,7 @@ const Navigation = ({ version, lang }: NavigationProps) => {
   const data = navigationList[lang];
 
   const renderNavigationList =
-    version === 'desktop'
-      ? Object.values(data).filter((id) => id !== 'MAIN')
-      : Object.values(data);
+    version === 'desktop' ? Object.values(data).filter((id) => id !== 'MAIN') : Object.values(data);
 
   return (
     <nav className={styles.nav}>

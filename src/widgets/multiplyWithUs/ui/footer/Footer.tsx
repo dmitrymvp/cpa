@@ -1,6 +1,6 @@
 import { socialLinks } from '@shared/model/socialLinks';
 import styles from './footer.module.css';
-import { scrollToTopText } from '@shared/model/i18n';
+import { scrollToTopText } from '@shared/model/constants';
 import type { Lang } from '@shared/types/language';
 
 interface FooterProps {

@@ -1,7 +1,7 @@
 import type { Lang } from '@shared/types/language';
 
 export const navigationList: Record<Lang, Record<string, string>> = {
-  eng: {
+  en: {
     main: 'MAIN',
     team: 'TEAM',
     benefits: 'BENEFITS',
@@ -16,14 +16,14 @@ export const navigationList: Record<Lang, Record<string, string>> = {
 };
 
 export const scrollToTopText = {
-  eng: 'SCROLL TO TOP',
+  en: 'SCROLL TO TOP',
   ru: 'НАВЕРХ',
 };
 
 export const heroSectionText = {
   title: 'PRACTICE MAKES',
   animatedText: ['PROFIT', 'GROWTH', 'SKILLS'],
-  eng: {
+  en: {
     subtitle:
       'We provide effective solutions, tested and refined on our own products and ad budgets',
     button: 'GET IN TOUCH',

@@ -4,7 +4,7 @@ import SocialBar from './ui/socialBar/SocialBar';
 import MainButton from '@shared/ui/mainButton/MainButton';
 import Container from '@shared/ui/container/Container';
 import type { Lang } from '@shared/types/language';
-import { heroSectionText } from '@shared/model/i18n';
+import { heroSectionText } from '@shared/model/constants';
 
 interface HeroProps {
   lang: Lang;
