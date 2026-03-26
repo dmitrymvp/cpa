@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
-import { multiTasksSectionTitle } from '@shared/model/i18n';
+import {
+  highlightWordsMultiTasksSection,
+  multiTasksSectionTitle,
+} from '@widgets/multiTasks/model/constants';
+import { getApiData } from '@shared/api/getApiData';
+import { highlightWords } from '@shared/utils/highlightWords';
 import Container from '@shared/ui/container/Container';
 import Card from '@shared/ui/card/Card';
-import type { Lang } from '@shared/types/language';
 import styles from './multiTasks.module.css';
-import { fetchSection } from '@shared/api/fetchSection';
-import type { TasksData } from './model/types';
 import snakeWithDiamond from '@assets/img/snake-with-diamond.png';
+import type { TasksData } from './model/types';
+import type { Lang } from '@shared/types/language';
 
 const TILE_COLUMNS: [number, number][] = [
   [0, 2],
@@ -21,30 +25,10 @@ const MultiTasks = ({ lang }: Props) => {
   const [data, setData] = useState<TasksData | null>(null);
 
   useEffect(() => {
-    fetchSection(lang, 'tasks').then(setData).catch(console.error);
+    getApiData(lang, 'tasks').then(setData).catch(console.error);
   }, [lang]);
 
-  const descriptionText = data?.description?.split(' ').map((word, i) => {
-    if (lang === 'ru') {
-      if (word === 'in-house:') {
-        return (
-          <span key={i} className={styles.span}>
-            {`${word} `}
-          </span>
-        );
-      }
-    }
-    if (lang === 'en') {
-      if (word === 'in-house' || word === 'team') {
-        return (
-          <span key={i} className={styles.span}>
-            {`${word} `}
-          </span>
-        );
-      }
-    }
-    return word + ' ';
-  });
+  const highlight = highlightWords(data?.description, highlightWordsMultiTasksSection[lang]);
 
   return (
     <section className={styles.section}>
@@ -54,7 +38,7 @@ const MultiTasks = ({ lang }: Props) => {
           <div className={styles.grid}>
             <div className={styles.column}>
               <Card className={styles.cardwithSnake}>
-                <p>{descriptionText}</p>
+                <p>{highlight}</p>
                 <div className={styles.imageWrapper}>
                   <img src={snakeWithDiamond} alt="" className={styles.image} />
                 </div>
