@@ -59,6 +59,13 @@
 
 body {
   font-family: var(--font-main);
+  height: 100vh;
+  background: linear-gradient(120deg, #dc8400, #560080, #220032) 0 0 / cover no-repeat;
+}
+
+.logo {
+  color: rgb(255, 255, 255);
+  height: 45px;
 }
 
 .highlight-words {
