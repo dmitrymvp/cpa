@@ -12,22 +12,20 @@ interface HeroProps {
 
 const Hero = ({ lang }: HeroProps) => {
   return (
-    <main className={styles.hero}>
-      <Container>
-        <div className={styles.flexContainer}>
-          <Header />
-          <section className={styles.section}>
-            <h1 className={styles.title}>
-              {`${heroSectionText.title} `}
-              <span>{heroSectionText.animatedText[0]}</span> {/* ИСПРАВИТЬ ПРИ АНИМАЦИИ */}
-            </h1>
-            <p className={styles.subtitle}>{heroSectionText[lang].subtitle}</p>
-            <MainButton text={heroSectionText[lang].button} onClick={() => console.log('click')} />
-          </section>
-          <SocialBar />
-        </div>
-      </Container>
-    </main>
+    <Container>
+      <main className={styles.main}>
+        <Header lang={lang} />
+        <section className={styles.section}>
+          <h1 className={styles.title}>
+            {`${heroSectionText.title} `}
+            <span>{heroSectionText.animatedText[0]}</span> {/* ИСПРАВИТЬ ПРИ АНИМАЦИИ */}
+          </h1>
+          <p className={styles.subtitle}>{heroSectionText[lang].subtitle}</p>
+          <MainButton text={heroSectionText[lang].button} onClick={() => console.log('click')} />
+        </section>
+        <SocialBar />
+      </main>
+    </Container>
   );
 };
 
