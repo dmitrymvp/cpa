@@ -1,0 +1,27 @@
+.errorPage {
+  padding: 30px 50px 110px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: url('~@assets/img/error-snake.png') left bottom / 539px 419px no-repeat;
+}
+
+.logoWrapper {
+  align-self: start;
+}
+.infoWrapper {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.errorCode {
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-style: Bold;
+  font-size: 378.89px;
+  font-weight: 700;
+  text-align: center;
+}
