@@ -1,8 +1,8 @@
 import '@assets/global.css';
-import MultiTasks from '@widgets/multiTasks/MultiTasks';
+import Benefits from '@widgets/benefits/Benefits';
 
 const App = () => {
-  return <MultiTasks lang="en" />;
+  return <Benefits lang="en" />;
 };
 
 export default App;
