@@ -19,6 +19,8 @@
   color: var(--color-dark);
   z-index: 10;
   flex: 0 0 auto;
+  width: max-content;
+  margin-top: 10px;
 }
 
 .mainButton::before {
