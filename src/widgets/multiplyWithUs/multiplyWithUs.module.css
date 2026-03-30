@@ -5,6 +5,7 @@
   width: 100%;
   height: 100vh;
   padding: 60px 66px 0px 36px;
+  background: url('~@assets/img/multiply-snake.png') left bottom / 630px 369px no-repeat;
 }
 
 .title {
