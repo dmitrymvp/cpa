@@ -7,7 +7,7 @@ export interface MultiplyWithUsSteps {
 }
 
 export interface MultiplyWithUsStepsWithID extends MultiplyWithUsSteps {
-  id: number;
+  id: string;
 }
 
 export type MultiplyWithUsData = MultiplyWithUsStepsWithID[];

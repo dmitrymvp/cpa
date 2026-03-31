@@ -10,6 +10,7 @@ import { capitalize } from '@shared/utils/capitalize';
 import type { MultiplyWithUsData } from './model/types';
 import type { Lang } from '@shared/types/language';
 import styles from './multiplyWithUs.module.css';
+import { v4 as uuidv4 } from 'uuid';
 
 interface MultiplyWithUsProps {
   lang: Lang;
@@ -17,21 +18,23 @@ interface MultiplyWithUsProps {
 
 const MultiplyWithUs = ({ lang }: MultiplyWithUsProps) => {
   const [data, setData] = useState<MultiplyWithUsData | null>(null);
-  const [isActive, setIsActive] = useState<number>(0);
+  const [isActive, setIsActive] = useState<string>('');
 
   useEffect(() => {
     getApiData<MultiplyWithUsData>(lang, 'multiply')
       .then((res) => {
-        const dataWithID = res.map((item, index) => ({
+        const dataWithID = res.map((item) => ({
           ...item,
-          id: index,
+          id: uuidv4(),
         }));
 
         setData(dataWithID);
+        setIsActive(dataWithID[0].id);
       })
       .catch(console.error);
   }, [lang]);
-
+  console.log(isActive);
+  console.log(data);
   return (
     <Container>
       <section className={styles.section}>
@@ -42,7 +45,9 @@ const MultiplyWithUs = ({ lang }: MultiplyWithUsProps) => {
               return (
                 <MultiplyButton
                   key={item.id}
-                  title={lang === 'en' ? capitalize(item.title, '_') : item.title}
+                  title={
+                    lang === 'en' ? item.title.split('_').map(capitalize).join(' ') : item.title
+                  }
                   isActive={isActive === item.id}
                   onClick={() => setIsActive(item.id)}
                 />
@@ -50,15 +55,16 @@ const MultiplyWithUs = ({ lang }: MultiplyWithUsProps) => {
             })}
           </div>
           <div className={styles.rightColumn}>
-            {data?.map((item) => {
+            {data?.map((item, index) => {
               if (isActive === item.id)
                 return (
-                  <Card>
+                  <Card key={item.id}>
                     <div className={styles.wrapper}>
                       <p className={styles.steps}>{item.steps.step_1}</p>
                       <p className={styles.steps}>{item.steps.step_2}</p>
                       <MainButton
-                        text={multiplyTextMainButton[item.id].text[lang]}
+                        key={item.id}
+                        text={multiplyTextMainButton[index].text[lang]}
                         onClick={() => console.log('click')}
                       />
                     </div>

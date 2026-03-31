@@ -1,8 +1,3 @@
-export const capitalize = (text: string, separator: string): string => {
-  return text
-    .split(separator)
-    .map((word) => {
-      return word.charAt(0).toUpperCase() + word.slice(1);
-    })
-    .join(' ');
+export const capitalize = (word: string): string => {
+  return word[0]?.toUpperCase() + word.slice(1);
 };
