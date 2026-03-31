@@ -9,6 +9,7 @@
   background-color: transparent;
   font-weight: 700;
   cursor: pointer;
+  width: max-content;
 }
 
 .button:hover,
@@ -29,19 +30,8 @@
   height: 14px;
   display: inline-block;
   position: absolute;
-  top: 11px;
+  top: 12px;
   right: -85px;
-  transform: rotate(315deg);
-}
-.span::after {
-  content: '';
-  border-bottom: 3px solid currentColor;
-  border-right: 3px solid currentColor;
-  width: 14px;
-  height: 14px;
-  display: inline-block;
-  position: absolute;
-  top: 11px;
   transform: rotate(315deg);
 }
 

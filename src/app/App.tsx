@@ -1,8 +1,8 @@
 import '@assets/global.css';
-import Benefits from '@widgets/benefits/Benefits';
+import MultiplyWithUs from '@widgets/multiplyWithUs/MultiplyWithUs';
 
 const App = () => {
-  return <Benefits lang="en" />;
+  return <MultiplyWithUs lang="en" />;
 };
 
 export default App;
